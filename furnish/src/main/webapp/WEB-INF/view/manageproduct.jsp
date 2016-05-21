@@ -35,7 +35,7 @@
 
 <body>
 <div id="header">
-<center><h3>Welcome to Furniture Gallery!</h3></center>
+<center><h3>Welcome to Furniture Stop!</h3></center>
 </div>
 
 <div>
@@ -58,7 +58,7 @@
 
 </div>
 <div id="section">
- <li><a href="prod"></a></li><br/></div>
+ </div>
 
 
 <div id="footer">

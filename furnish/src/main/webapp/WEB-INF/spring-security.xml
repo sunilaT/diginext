@@ -23,11 +23,11 @@
         <intercept-url pattern="/signup" access="permitAll" />
         <intercept-url pattern="/contact" access="permitAll" />
         <intercept-url pattern="/quick" access="permitAll" />
-           <intercept-url pattern="/adminhome" access="hasRole('ROLE_ADMIN')" />
-          <!--  <intercept-url pattern="/product" access="hasRole('ROLE_USER')" /> -->
+           <intercept-url pattern="/adminhome" access="hasRole('ROLE_ADMIN')"/>
+          <!--  <intercept-url pattern="/product" access="hasRole('ROLE_USER')"/> -->
            
         <form-login login-page="/mylogin" default-target-url="/adminhome" authentication-failure-url="/accessdenied" />
-        <logout logout-success-url="/logout" />
+        <logout logout-success-url="/logout"/>
     </http> 
 	 
 	<authentication-manager>

@@ -47,8 +47,8 @@
             <ul class="nav navbar-nav">
                 <li class="active">
   	<li><a href="./">Home</a></li><br/>
-    <li><a href="mylogin">Login</a></li><br/>
-    <li><a href="signup">SignUp</a></li><br/>
+    
+    
     <li><a href="product">All Categories</a></li><br/>
     <li><a href="aboutus">About us</a></li></br>
                 
@@ -60,7 +60,7 @@
 
 <!-- Wrapper for slides -->
 <div id="section">
-<h2><p style="float:left;">List Of Products!</p></h2>
+<h2><p style="float:left;">List Of Users!</p></h2>
     	<img src="<c:url value="/resources/images/furnish.jpg" />" width="300" height="150" alt="img1"  style="float:right;"/> 
  
   	<p style="text-align: justify;">
@@ -71,22 +71,26 @@
 	</form> -->
 	<table class="table table-striped">
 	<tr>
-
-		<th>NAME</th>
-		<th>PRICE</th>
 		<th>ID</th>
+		<th>NAME</th>
+		<th>PASSWORD</th>
+		<th>PHNO</th>
+		<th>EMAILID</th>
+		<th>ENABLED</th>
+		
 		
 		
 	</tr>
 	
 		<c:forEach items="${data}" var="product">  
    <tr>  
-  
-    <td><c:out value="${product.pname}"/></td>  
-    <td><c:out value="${product.pcost}"/></td>  
-    <td><c:out value="${product.pid}"/></td>   
-     <td align="center"><a href="edit/${product.pid}
-     ">Edit</a> | <a href="product1/${product.pid}">Delete</a></td>  
+    <td><c:out value="${product.userid}"/></td>  
+    <td><c:out value="${product.name}"/></td>  
+    <td><c:out value="${product.pwd}"/></td>  
+    <td><c:out value="${product.phno}"/></td>   
+    <td><c:out value="${product.emailid}"/></td>
+    <td><c:out value="${product.enabled}"/></td>
+     <td align="center"></a> <a href="deletec/${product.userid}">Delete</a></td>  
    </tr>  
   </c:forEach>
 	

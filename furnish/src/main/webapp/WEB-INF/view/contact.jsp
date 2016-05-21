@@ -51,7 +51,7 @@
                 <li><a href="product">All Categories</a></li><br/>
                 <li><a href="aboutus">About</a></li><br/>
                 <li><a href="contact">Contact</a></li><br/>        
-                <li><a href="prod">Add Product</a></li><br/>           
+                <!-- <li><a href="prod">Add Product</a></li><br/> -->           
                 <li><a href="quick">Take a Tour!</a></li><br/>
                 <li><a href="display">Upload File</a></li><br/>
                 </li>                

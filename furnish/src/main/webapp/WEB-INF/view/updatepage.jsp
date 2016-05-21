@@ -80,11 +80,7 @@ Product p=(Product)obj;
 %>
 <form:form method="POST" action="/furnish/updateprod" >
    <table>
-    <tr>
-        <td><form:label path="num">No</form:label></td>
-        <td><form:input path="num" value="<%=p.getNum() %>"/></td>
-        
-    </tr>
+    
     <tr>
         <td><form:label path="pid">Pid</form:label></td>
         <td><form:input path="pid" value="<%=p.getPid() %>"/></td>

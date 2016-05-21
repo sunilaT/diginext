@@ -53,7 +53,7 @@
                 <li><a href="contact">Contact</a></li><br/>        
                 <!-- <li><a href="ad">Add Product</a></li><br/>          
                 <li><a href="quick">Take a Tour!</a></li><br/> -->
-                <li><a href="display">Upload File</a></li><br/>
+               <!--  <li><a href="display">Upload File</a></li><br/>  -->
                 </li>                
             </ul>
         </div>
@@ -64,14 +64,7 @@
 <div id="section">
 <form:form method="POST" action="./addprod" >
    <table>
-    <tr>
-        <td><form:label path="num">No</form:label></td>
-        <td><form:input path="num"/></td>
-    </tr>
-    <tr>
-        <td><form:label path="pid">Pid</form:label></td>
-        <td><form:input path="pid" /></td>
-    </tr>
+   
     <tr>
         <td><form:label path="pname">Product Name</form:label></td>
         <td><form:input path="pname" /></td>
@@ -87,7 +80,16 @@
                   </td>
     </tr>
 </table>  
-</form:form>
+</form:form><br/><br/>
+<div>
+<form method="POST" action="save" enctype="multipart/form-data">
+        Upload Image? <input type="file" name="file"><br /> 
+        Name: <input type="text" name="name"><br /> <br /> 
+        <input type="submit" value="Upload"> 
+    </form>
+
+</div>
+
 
 </div>
 
@@ -100,14 +102,8 @@ Copyright © Furniture.com
 </html>        
   <form:form method="POST" action="./addprod" >
    <table>
-    <tr>
-        <td><form:label path="num">No</form:label></td>
-        <td><form:input path="num"/></td>
-    </tr>
-    <tr>
-        <td><form:label path="pid">Pid</form:label></td>
-        <td><form:input path="pid" /></td>
-    </tr>
+   
+    
     <tr>
         <td><form:label path="pname">Product Name</form:label></td>
         <td><form:input path="pname" /></td>

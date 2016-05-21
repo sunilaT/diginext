@@ -38,33 +38,30 @@
 
 
 <div id=section>
- <form:form method="POST" action="./reg">
+ <form:form method="POST" action="./reg" commandName="cmd">
+ <font color="red"><form:errors path="*" cssClass="errorblock" element="div"/></font>
    <table>
     <tr>
         <td><form:label path="name">Name :</form:label></td>
         <td><form:input path="name" /></td>
+        <td><form:errors path="name" cssClass="error"/></td>
         
     </tr>
     <tr>
         <td><form:label path="pwd">Password :</form:label></td>
         <td><form:input path="pwd" /></td>
-
+		<td><form:errors path="pwd" cssClass="error"/></td>
     </tr>
     <tr>
         <td><form:label path="phno"> Phone No. :</form:label></td>
         <td><form:input path="phno"/></td>
-
+		<td><form:errors path="phno" cssClass="error"/></td>
     </tr>
     
-    <tr>
-        <td><form:label path="userid">User Id :</form:label></td>
-        <td><form:input path="userid" /></td>
-
-    </tr>
-    <tr>
+        <tr>
         <td><form:label path="emailid">Email-id</form:label></td>
         <td><form:input path="emailid" /></td>
-
+		<td><form:errors path="emailid" cssClass="error"/></td>
     </tr>
     <tr>
         <td colspan="2">

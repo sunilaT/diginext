@@ -46,7 +46,7 @@
                 <li class="active">
                 <li><a href="./">Home</a></li><br/>
 				<li><a href="mylogin">Login</a></li><br/>
-                <li><a href="manageuser">Manage Users</a></li><br/>
+                <li><a href="viewcustomers">View Users</a></li><br/>
 				<li><a href="manageproduct">Manage Products</a></li><br/>
 				<li><a href="logout">Logout</a></li>
                 </li>                

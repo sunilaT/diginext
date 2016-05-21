@@ -49,7 +49,7 @@
   	<li><a href="./">Home</a></li><br/>
     <li><a href="mylogin">Login</a></li><br/>
     <li><a href="signup">SignUp</a></li><br/>
-    <li><a href="product">All Categories</a></li><br/>
+    <li><a href="product2">All Categories</a></li><br/>
     <li><a href="aboutus">About us</a></li></br>
                 
                 </li>                
@@ -71,22 +71,16 @@
 	</form> -->
 	<table class="table table-striped">
 	<tr>
-
 		<th>NAME</th>
 		<th>PRICE</th>
 		<th>ID</th>
-		
-		
-	</tr>
-	
-		<c:forEach items="${data}" var="product">  
-   <tr>  
-  
+    </tr>
+  <c:forEach items="${data}" var="product"> 
+   <tr>        
     <td><c:out value="${product.pname}"/></td>  
     <td><c:out value="${product.pcost}"/></td>  
-    <td><c:out value="${product.pid}"/></td>   
-     <td align="center"><a href="edit/${product.pid}
-     ">Edit</a> | <a href="product1/${product.pid}">Delete</a></td>  
+    <td><c:out value="${product.pid}"/></td>  
+    <td><a href="buynow">Buy Now</a></td>        
    </tr>  
   </c:forEach>
 	

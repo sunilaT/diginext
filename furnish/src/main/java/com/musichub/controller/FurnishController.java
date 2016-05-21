@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 //import javax.validation.Valid;
+import javax.validation.Valid;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -16,6 +17,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.google.gson.*;
 
@@ -42,6 +44,12 @@ public class FurnishController
 	 {
 		return new ModelAndView("index");  
 	 }
+	@RequestMapping("/product2")  
+	 public ModelAndView product2() 
+	 {
+		List<Product> arr=p1.getProList();
+		return new ModelAndView("productcustomer","data",arr);  
+	 }
 	
 	@RequestMapping("/prod")  
 	 public ModelAndView prod() 
@@ -50,26 +58,33 @@ public class FurnishController
 		return new ModelAndView("prod","command",new Product());
 	
 	 }
+	@ModelAttribute("cmd")
+	public Customer getvalid()
+	{
+		
+		return new Customer();
+	}
 	
 	@RequestMapping("/reg")  
-	 public ModelAndView regcust(@ModelAttribute("customer") Customer c, BindingResult res) 
+	 public String regcust(@ModelAttribute("cmd")@Valid Customer c, BindingResult res) 
 	 {
 		try{
 		c1.insert(c);
 		}
 		catch(Exception e)
 		{
-			
+			System.out.println(e);
 		}
 		System.out.println("customer--------------->");
-		/*ModelAndView m=new ModelAndView("signup");
+		ModelAndView m=new ModelAndView("signup");
 		if(res.hasErrors()){
-			m.addObject("command",new Customer());
-			return m;
+			//m.addObject("command",new Customer());
+			//return m;
+			return "signup";
 		}else{
-			return m;
-		}*/
-		return new ModelAndView("userhome","command",new Customer());
+			return "index";
+		}
+		//return new ModelAndView("index","command",new Customer());
 	 }
 	
 	@RequestMapping("/addprod")  
@@ -115,6 +130,18 @@ public class FurnishController
 		//return new ModelAndView("product","data",gson.toJson(arr));//for json
 		return new ModelAndView("product","data",arr);
 	}
+	@RequestMapping("/viewcustomers")
+	 public ModelAndView allcust() 
+	{
+		System.out.println("In product^^^^^^^^");
+		System.out.println("In product^^^^^^^^2222");
+		List<Customer> arr=c1.viewcustomers();
+		//System.out.println(arr);
+		//Gson gson=new Gson();
+		//String json=gson.toJson(arr);
+		//return new ModelAndView("product","data",gson.toJson(arr));//for json
+		return new ModelAndView("viewcustomers","data",arr);
+	}
 	
 	@RequestMapping("/product1/{pid}")
 	 public ModelAndView allcat1(@PathVariable("pid")int pid) 
@@ -131,7 +158,7 @@ public class FurnishController
 		return new ModelAndView("product","data",json);
 		 */
 		}
-
+	
 	@RequestMapping("/updateprod")
 	public ModelAndView update(@ModelAttribute("furnish")Product p) 
 	 {
@@ -207,6 +234,11 @@ public class FurnishController
 	 {
 		return new ModelAndView("aboutus");  
 	 }
+	@RequestMapping("/buynow")
+	 public ModelAndView buynow() 
+	 {
+		return new ModelAndView("buynow");  
+	 }
 	
 	@RequestMapping("/quick")
 	 public ModelAndView quick() 
@@ -220,10 +252,20 @@ public class FurnishController
 		p1.remove(id);
 		return new ModelAndView("product");  
 	 }
+	@RequestMapping("/deletec/{id}")
+	 public ModelAndView deletec(@PathVariable("id")int id) 
+	 {
+		c1.delete(id);
+		return new ModelAndView("viewcustomers");  
+	 }
 	
 	@RequestMapping("/pinfo")
-	 public ModelAndView pinfo() 
+	 public ModelAndView pinfo(@RequestParam("pname")String pname,@RequestParam("pcost")Double pcost) 
 	 {
-		return new ModelAndView("pinfo");  
+		System.out.println(pname+"  "+pcost);
+		ModelAndView m1= new ModelAndView("pinfo");
+		m1.addObject("pname",pname);
+		m1.addObject("pcost",pcost);
+		return m1;
 	 }
 	}//End of controller
